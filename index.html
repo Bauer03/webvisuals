@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Send Mail</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+
+</head>
+
+<body>
+    <form method="post">
+        <input type="button" value="Send Email" onclick="sendEmail()" />
+    </form>
+
+    <script type="text/javascript">
+        // should be sending email to paulalexisbauer04@gmail.com saying "Hopefully this sends correctly."
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "computingclub.bridgewater@gmail.com",
+                Password: "BCcode4fun!404$",
+                To: 'paulalexisbauer04@gmail.com',
+                From: "computingclub.bridgewater@gmail.com",
+                Subject: "[CodeOtter] New Feedback Test",
+                Body: "Hopefully this sends correctly.",
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                    console.log(message);
+                });
+        }
+    </script>
+</body>
+
+</html>
